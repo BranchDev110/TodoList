@@ -20,12 +20,12 @@ const TodoList = () => {
         : todos[destination.index + 1] === undefined
         ? -1
         : todos[destination.index + 1]["todo_id"];
+    const items = [...todos];
+    const [reorderedItem] = items.splice(source.index, 1);
+    items.splice(destination.index, 0, reorderedItem);
+    setTodos(items);
     const res = await changeItem(todo_src_id, todo_dest_f_id, todo_dest_s_id);
     if (res.success === true) {
-      const items = [...todos];
-      const [reorderedItem] = items.splice(source.index, 1);
-      items.splice(destination.index, 0, reorderedItem);
-      setTodos(items);
     }
     else {
       alert("Error!")
