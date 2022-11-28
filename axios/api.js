@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const BASE_URL = "http://localhost:8000";
-const BASE_URL = 'https://boiling-savannah-17838.herokuapp.com'
+const BASE_URL = "http://localhost:8000";
+// const BASE_URL = 'https://boiling-savannah-17838.herokuapp.com'
 
 export const createTodo = async (text) => {
   try {

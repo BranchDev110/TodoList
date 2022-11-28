@@ -8,7 +8,7 @@ import IconCross from "../public/images/icon-cross.svg";
 const TodoListItem = ({ todo, index }) => {
   const [todos, setTodos] = useTodoContext();
 
-  const handleDeleteTodo = async () => {
+  const handleDelete = async () => {
     const res = await deleteTodo(todo["todo_id"]);
     if(res.success === true){
       const newTodos = todos.filter(
@@ -35,10 +35,6 @@ const TodoListItem = ({ todo, index }) => {
     else {
       alert ("Error!")
     }
-  };
-
-  const handleDelete = () => {
-    handleDeleteTodo();
   };
 
   return (
